@@ -41,13 +41,10 @@ Backend> dotnet ef database update
 | Angular |
 -----------
 root> ng new Fronend
+Fronend> ng g c Products
 
 
 
-
----------------
-| Sql commands |
----------------
 
 USE master
 GO
@@ -68,6 +65,11 @@ CREATE TABLE Users (
 GO
 
 
-
-
- 
+-------
+| Git |
+-------
+git init
+git add --all
+git commit -m "Backend return result"
+git remote add origin https://github.com/shauliperets/AngularCsharp.git
+git push -u origin master
