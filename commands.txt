@@ -1,0 +1,73 @@
+Root> mkdir Backend
+
+Backend> dotnet new --list
+
+//Backend> dotnet new mvc
+Root> donnet new webapi -o Backend
+
+//Backend> dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+Backend> dotnet add package Microsoft.EntityFrameworkCore
+Backend> dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+Backend> dotnet add package Microsoft.EntityFrameworkCore.Tools
+Backend> dotnet add package Microsoft.EntityFrameworkCore.InMemory
+Backend> dotnet add package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore
+
+
+---------
+| Sqlite |
+---------
+//sqlite>sqlite .open <-- Create DB in sqlite cmd
+
+//Backend> dotnet ef migrations add CreateDatabase
+//Backend> dotnet ef database update
+
+
+------------
+| sqlserver |
+------------
+> sqlcmd -S localhost -U SA -P 'Ng9dozv0'
+
+1> SELECT @@SERVERNAME, @@SERVICENAME
+2> go
+
+
+-------------
+| Migrations |
+-------------
+Backend> dotnet ef migrations add CreateDatabase
+Backend> dotnet ef database update
+
+-----------
+| Angular |
+-----------
+root> ng new Fronend
+
+
+
+
+---------------
+| Sql commands |
+---------------
+
+USE master
+GO
+IF NOT EXISTS (
+    SELECT [name]
+        FROM sys.databases
+        WHERE [name] = N'ShopingCartDB'
+)
+CREATE DATABASE ShopingCartDB
+GO
+
+CREATE TABLE Users (
+    Id INT,
+    FirstName varchar(255),
+    LastName varchar(255),
+    Email varchar(255)
+)
+GO
+
+
+
+
+ 
